@@ -19,9 +19,14 @@ class Message implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct()
+    public $username;
+    public $message;
+
+
+    public function __construct($username, $message)
     {
-        //
+        $this->username = $username;
+        $this->message = $message;
     }
 
     /**
@@ -31,6 +36,10 @@ class Message implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new Channel('chat');
+    }
+    public function broadcastAs()
+    {
+        return 'message';
     }
 }
