@@ -29,7 +29,7 @@
 
                     <div class="box-footer">
 
-                        <form action="#" method="post" id="message">
+                        <form action="{{ url('/send-message') }}" method="post" id="message">
 
                             <div class="input-group">
                                 <input type="Text" name="message" id="message" placeholder="Type message ......." class="form-control">
